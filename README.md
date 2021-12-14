@@ -27,4 +27,3 @@ Thanks to the following projects:
 -------
 Apache License 2.0.Copyright (c) 2021-present Orville Yang  
 Orville Yang's Blog is derived from [Hux Blog](https://huangxuan.me/) Copyright (c) 2015-present Huxpro.  
-Copyright (c) 2013-2016 Blackrock Digital LLC.
