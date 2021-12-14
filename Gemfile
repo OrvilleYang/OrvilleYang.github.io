@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-gem 'jekyll'
 gem 'jekyll-paginate'
+gem 'jekyll'
 gem 'webrick'
-
-#gem "webrick", "~> 1.7"
+#gem "jekyll", "~> 4.0"
+gem "rake"
