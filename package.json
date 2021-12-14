@@ -1,14 +1,13 @@
 {
-    "name": "hux-blog",
-    "title": "Hux Blog",
-    "author": "Hux <huxpro@gmail.com>",
-    "version": "1.8.2",
-    "homepage": "http://huxpro.github.io",
+    "name": "Orville-Yang-Blog",
+    "title": "Orville Yang's Blog",
+    "author": "Orville Yang",
+    "version": "1.0.0",
+    "homepage": "https://orvilleyang.github.io",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Huxpro/huxpro.github.io"
+        "url": "https://github.com/OrvilleYang/OrvilleYang.github.io"
     },
-    "bugs": "https://github.com/Huxpro/huxpro.github.io/issues",
     "devDependencies": {
         "grunt": ">=1.3.0",
         "grunt-banner": "~0.2.3",
