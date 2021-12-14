@@ -1,0 +1,60 @@
+---
+layout:     post
+title:      "Markdown Issues 1"
+subtitle:   "Markdown, Atom, Spaces, and Spell Check"
+date:       2021-12-14 22:30:00
+author:     "Orville Yang"
+header-img: "/img/post-bg.jpg"
+catalog: true
+tags:
+    - 电脑
+    - 折腾
+    - Markdown
+    - MD
+    - Atom
+    - 笔记
+---
+
+参考自：[atom自动删除了我行末的空格？](https://segmentfault.com/q/1010000006249322)，[Markdown语法中首行缩进的方法](https://www.jianshu.com/p/0d347f8a997d)。  
+
+今天在Atom上使用Markdown写稿的时候有几个小问题，在此与解决方法一并贴上。
+
+# 问题1：Atom在默认配置下会自动删除行末的空格，导致Markdown无法换行
+
+解决方法：在Atom设置-扩展中搜索whitespace，在其设置中关闭“Ensure Single Trailing Newline”与“Ignore whitespace only Lines”两项即可。
+
+<img src="/img/in-post/2021-12-14-MDIssue1/1_space.jpg" width="600">  
+
+# 问题2：Markdown如何支持缩进
+
+解决方法：
+```shell
+#半角的空格（英文下使用）：
+&ensp;
+&#8194;
+
+#全角的空格（中文下使用）：
+&emsp;
+&#8195;
+
+#不断行的空格：
+&nbsp;
+&#160;
+```
+
+示例：
+```shell
+云销雨霁，彩彻区明。落霞与孤鹜齐飞，秋水共长天一色。  
+&ensp;&ensp;云销雨霁，彩彻区明。落霞与孤鹜齐飞，秋水共长天一色。  
+&emsp;&emsp;云销雨霁，彩彻区明。落霞与孤鹜齐飞，秋水共长天一色。  
+```
+效果：  
+云销雨霁，彩彻区明。落霞与孤鹜齐飞，秋水共长天一色。  
+&ensp;&ensp;云销雨霁，彩彻区明。落霞与孤鹜齐飞，秋水共长天一色。  
+&emsp;&emsp;云销雨霁，彩彻区明。落霞与孤鹜齐飞，秋水共长天一色。  
+
+# 问题3：Atom中如何开启对Markdown语言的拼写检查
+
+解决方法：在Atom设置-扩展中搜索spell-check，在其设置中Grammars一项中添加“text.md”。此外，如果系统环境非英语，应当打开“Use Locales”一项，并在Locales项中添加“en-US”。  
+
+<img src="/img/in-post/2021-12-14-MDIssue1/2_spellcheck.jpg" width="600">  

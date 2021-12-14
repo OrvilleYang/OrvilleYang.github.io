@@ -4,7 +4,7 @@ title:      "Hello World!"
 subtitle:   "如何使用Github Pages搭建个人博客"
 date:       2021-12-14 14:00:00
 author:     "Orville Yang"
-header-img: "/img/in-post/2021-12-14-Hello/bg.jpg"
+header-img: "/img/post-bg.jpg"
 catalog: true
 tags:
     - 电脑
@@ -60,22 +60,22 @@ GitHub Pages原生支持[Jekyll](http://jekyllcn.com/)，因而推荐直接在[J
 ## 二、 搭建Jekyll环境
   1. 安装[Ruby](https://www.ruby-lang.org/en/)，[安装教程](https://www.ruby-lang.org/zh_cn/documentation/installation/)，[安装包下载(Windows)](https://rubyinstaller.org/)。  
   2. 打开Terminal，Powershell或者CMD，**进入仓库文件夹**，执行以下命令以安装Jekyll。  
-  ```ruby
+  ```shell
   gem install jekyll
   ```
   3. 执行以下命令以安装其他依赖。
-  ```ruby
+  ```shell
   bundle install
   ```
   4. 如果本地仓库根目录没有Gemfile则可以尝试以下依赖替代。  
-      ```ruby
+  ```shell
   gem install jekyll-paginate
   gem install jekyll
   gem install webrick
   ```
   **注意：Webrick对于Ruby(>=3.0)需要自行安装。另外，如果反复提示依赖关系无法满足，可以尝试删除根目录下Gemfile.lock文件。**  
   5. 启动Jekyll服务。
-  ```ruby
+  ```shell
   bundle exec jekyll serve
   ```
 <img src="/img/in-post/2021-12-14-Hello/5_jekyll.jpg" width="800">  
