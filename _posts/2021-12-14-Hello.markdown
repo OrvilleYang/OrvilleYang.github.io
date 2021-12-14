@@ -4,13 +4,14 @@ title:      "Hello World!"
 subtitle:   "如何使用Github Pages搭建个人博客"
 date:       2021-12-14 14:00:00
 author:     "Orville Yang"
-header-img: ""
+header-img: "/img/in-post/2021-12-14-Hello/bg.jpg"
 catalog: true
 tags:
     - 电脑
     - 折腾
     - 博客
     - 编程
+    - 教程
     - GitHub
 ---
 
@@ -19,23 +20,122 @@ tags:
 > “Yeah, It works. ”
 
 # 前言
-
 大家好，我是素问。终于在折腾一整天后完成了这个博客的简单部署。之前我也曾考虑过购置VPS或是在自己的笔记本上搭建一个个人博客，但是考虑到可访问性与长期的成本问题，最终放弃。那为什么不在公共的平台，例如知乎的专栏来进行写作呢？我个人始终认为所有云端存储都称不上稳定，再加上知乎可能存在的删帖、限流因素，我最终采用了Atom本地撰写+Github Pages实现线上发表的模式。  
 博客使用的模板为[Hux Blog](https://huangxuan.me/)，感谢开源精神！  
 本文中流程部分参考自[使用github pages搭建个人博客](https://www.cnblogs.com/sqchen/p/10757927.html)
 
 # 环境准备
-
 基础的环境、运行方法都被老前辈们打包得很nice，你只需要按步骤下载下来即可。准备工作：
   1. 随意一个本地的文字编辑器（我使用atom）。
   2. GitHub账户。
-  3. 一点点折腾精神。
+  3. **一点点折腾精神。**
 
 # 线上部分
-## 1. 在GitHub中新建一个仓库
+## 一、 在GitHub中新建一个仓库
 
 <img src="/img/in-post/2021-12-14-Hello/2_newrepository.jpg" width="800">  
 
 这里因为我已经创建过了GitHub Pages，所以提示不能再创建了。注意名字必须为xxxx.github.io。  
-此外，用于GitHub Pages的仓库必须设置为Public，如果设置Private需要订阅Pro Plan。  
+**此外，用于GitHub Pages的仓库必须设置为Public，如果设置Private需要订阅Pro Plan。**  
 
+## 二、 将此仓库克隆到本地
+
+当然进行这一步有很多种实现途径，但我本人推荐使用[GitHub Desktop](https://desktop.github.com/)软件进行。  
+
+<img src="/img/in-post/2021-12-14-Hello/3_githubdesktop.jpg" width="800">  
+
+在将代码拉取到本地后，由于是新仓库，其中可能只有一些类似readme.md的文件，直接将仓库文件夹下除了.git文件夹剩下的所有内容删除。
+
+到这里线上部分就结束了，剩下的工作就是对本地的项目进行处理，最后再Push即可。
+
+# 线下部分
+## 一、 下载模板
+GitHub Pages原生支持[Jekyll](http://jekyllcn.com/)，因而推荐直接在[JekyllThemes](http://jekyllthemes.org/page5/)上寻找自己喜欢的模板。随后从其开源地址(GitHub)直接下载，解压至我们刚刚创建的本地仓库位置。  
+关于Jekyll的中文详细信息可以在[这里](http://jekyllcn.com/)找到。  
+
+<img src="/img/in-post/2021-12-14-Hello/4_folder.jpg" width="400">  
+
+大致就是这样的文件结构。
+
+## 二、 搭建Jekyll环境
+  1. 安装[Ruby](https://www.ruby-lang.org/en/)，[安装教程](https://www.ruby-lang.org/zh_cn/documentation/installation/)，[安装包下载(Windows)](https://rubyinstaller.org/)。  
+  2. 打开Terminal，Powershell或者CMD，**进入仓库文件夹**，执行以下命令以安装Jekyll。  
+  ```ruby
+  gem install jekyll
+  ```
+  3. 执行以下命令以安装其他依赖。
+  ```ruby
+  bundle install
+  ```
+  4. 如果本地仓库根目录没有Gemfile则可以尝试以下依赖替代。  
+      ```ruby
+  gem install jekyll-paginate
+  gem install jekyll
+  gem install webrick
+  ```
+  **注意：Webrick对于Ruby(>=3.0)需要自行安装。另外，如果反复提示依赖关系无法满足，可以尝试删除根目录下Gemfile.lock文件。**  
+  5. 启动Jekyll服务。
+  ```ruby
+  bundle exec jekyll serve
+  ```
+<img src="/img/in-post/2021-12-14-Hello/5_jekyll.jpg" width="800">  
+
+  当看到这个页面时就说明Jekyll服务正常运行了。
+
+  6. 在浏览器中访问 http://127.0.0.1:4000 以验证页面显示情况。
+  7. 如果页面可以正常访问，那么连续按两次Ctrl+C以退出Jekyll服务。
+  8. 在GitHub Desktop中操作commit，随后再Push到服务器，稍等片刻，访问xxxx.github.io，Enjoy it!  
+
+  至此博客框架已经搭建完成了！
+
+# 定制博客
+你可以通过修改仓库跟目录下的 _config.yml 文件来定制自己的博客。或者如果你有一定的HTML基础，也可以自行修改 _includes 文件夹下的html文件。
+```ruby
+# _config.yml
+# Site settings
+title: Your Blog             # title of your website
+SEOTitle: Your Blog          # check out docs for more detail
+description: "Cool Blog"    # ...
+
+# SNS settings      
+github_username: You     # modify this account to yours
+weibo_username: You      # the footer woule be auto-updated.
+
+# comment system
+duoshuo_username: your_duoshuo_short_name
+# OR
+disqus_username: your_disqus_short_name
+
+# Analytics
+# Baidu Analytics
+ba_track_id: your_baidu_track_id
+
+# Google Analytics
+ga_track_id: your_google_track_id            # Format: UA-xxxxxx-xx
+ga_domain: auto
+```  
+随后Push到服务器即可完成更新。
+
+# 发布博客
+以Markdown格式文档为例，需要按照如下格式命名md文件： yyyy-MM-dd-filename.md。文档需要有一个前缀来标明其标题时间等，格式如下。
+```ruby
+# _config.yml
+# Site settings
+layout:     post
+title:      "Hello"
+subtitle:   " \"Hello World, Hello Blog\""
+date:       2021-12-14 20:30:00
+author:     "You"
+header-img: "img/post-bg.jpg"
+catalog: true
+tags:
+    - Life
+```  
+完成写作后，Push到服务器即可完成更新。
+
+# 补充
+在处理模板的过程中，发现几个比较麻烦的点，特别写在这里。
+  1. [Disqus](https://disqus.com/)注册总体而言比较简单。其有免费的Basic Plan，但是藏在页面下方，选择Plan时请往下翻一番。
+  2. Disqus的Basic Plan是有广告的，但是可以在网站设置-ads中设置为仅保留评论区上方的广告。
+  3. 为防止别人滥用你的Disqus账号，请务必在网站设置-Advanced中设置你的网站为Trusted Domains。
+  4. 目前在Google Analytics中新建媒体资源时，需要在第一步媒体资源设置中显示高级选项，并选中“创建 Universal Analytics 媒体资源”。使用新的Google Analytics组件可能导致旧版本博客模板无法兼容，请自行测试。
