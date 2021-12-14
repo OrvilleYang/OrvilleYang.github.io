@@ -1,0 +1,41 @@
+---
+layout:     post
+title:      "Hello World!"
+subtitle:   "如何使用Github Pages搭建个人博客"
+date:       2021-12-14 14:00:00
+author:     "Orville Yang"
+header-img: ""
+catalog: true
+tags:
+    - 电脑
+    - 折腾
+    - 博客
+    - 编程
+    - GitHub
+---
+
+<img src="/img/in-post/2021-12-14-Hello/1_overall.jpg" width="100%">  
+
+> “Yeah, It works. ”
+
+# 前言
+
+大家好，我是素问。终于在折腾一整天后完成了这个博客的简单部署。之前我也曾考虑过购置VPS或是在自己的笔记本上搭建一个个人博客，但是考虑到可访问性与长期的成本问题，最终放弃。那为什么不在公共的平台，例如知乎的专栏来进行写作呢？我个人始终认为所有云端存储都称不上稳定，再加上知乎可能存在的删帖、限流因素，我最终采用了Atom本地撰写+Github Pages实现线上发表的模式。  
+博客使用的模板为[Hux Blog](https://huangxuan.me/)，感谢开源精神！  
+本文中流程部分参考自[使用github pages搭建个人博客](https://www.cnblogs.com/sqchen/p/10757927.html)
+
+# 环境准备
+
+基础的环境、运行方法都被老前辈们打包得很nice，你只需要按步骤下载下来即可。准备工作：
+  1. 随意一个本地的文字编辑器（我使用atom）。
+  2. GitHub账户。
+  3. 一点点折腾精神。
+
+# 线上部分
+## 1. 在GitHub中新建一个仓库
+
+<img src="/img/in-post/2021-12-14-Hello/2_newrepository.jpg" width="800">  
+
+这里因为我已经创建过了GitHub Pages，所以提示不能再创建了。注意名字必须为xxxx.github.io。  
+此外，用于GitHub Pages的仓库必须设置为Public，如果设置Private需要订阅Pro Plan。  
+
