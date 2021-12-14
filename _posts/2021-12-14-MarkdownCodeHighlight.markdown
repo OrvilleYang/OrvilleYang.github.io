@@ -4,7 +4,7 @@ title:      "Markdown语法高亮显示说明"
 subtitle:   "Markdown syntax highlighting instructions"
 date:       2021-12-14 22:19:00
 author:     "Orville Yang"
-header-img: "/img/post-bg.jpg"
+header-style: text
 catalog: true
 tags:
     - 电脑

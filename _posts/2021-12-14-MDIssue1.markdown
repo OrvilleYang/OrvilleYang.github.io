@@ -4,7 +4,7 @@ title:      "Markdown Issues 1"
 subtitle:   "Markdown, Atom, Spaces, and Spell Check"
 date:       2021-12-14 22:30:00
 author:     "Orville Yang"
-header-img: "/img/post-bg.jpg"
+header-style: text
 catalog: true
 tags:
     - 电脑
