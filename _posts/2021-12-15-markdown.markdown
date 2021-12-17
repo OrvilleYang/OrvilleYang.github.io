@@ -1,0 +1,685 @@
+---
+layout:     post
+title:      "Hello Markdown!"
+subtitle:   "一份入门级别的Markdown教程"
+date:       2021-12-15 20:00:00
+author:     "Orville Yang"
+header-img: "img/post-bg.jpg"
+header-mask: 0.3
+catalog: true
+tags:
+    - 电脑
+    - 折腾
+    - 博客
+    - 编程
+    - 教程
+    - Markdown
+    - MD
+---
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+
+# 前言
+
+本文内容主要来源：[Markdown 教程](https://www.runoob.com/markdown/md-tutorial.html)。
+
+由于存在标题示例，右侧的目录可能出现错误。
+
+# 标题
+
+Markdown 标题有两种格式。
+
+## 第一种：使用`=`和`-`标记一级和二级标题
+
+格式如下：
+
+```Ruby
+一级标题
+========
+二级标题
+--------
+```
+
+示例如下：
+
+一级标题
+========
+二级标题
+--------
+
+## 第二种：使用`#`号标记
+
+格式如下：
+
+```Ruby
+# 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+```
+
+示例如下：
+
+# 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+
+# 段落
+
+Markdown换行的格式为：在上一行的末尾加上两个或两个以上`空格`，再加上`回车`。两个段落中间的空行（即两个回车）也同样意味着两个段落由空行分隔。
+
+格式如下：
+
+```Ruby
+#前两行最后是有两个空格的
+云销雨霁，彩彻区明。  
+落霞与孤鹜齐飞，秋水共长天一色。  
+渔舟唱晚，响穷彭蠡之滨；
+
+雁阵惊寒，声断衡阳之浦。
+```
+
+示例如下：
+
+云销雨霁，彩彻区明。  
+落霞与孤鹜齐飞，秋水共长天一色。  
+渔舟唱晚，响穷彭蠡之滨；
+
+雁阵惊寒，声断衡阳之浦。
+
+# 字体
+
+Markdown可以使用以下几种字体，需要使用`*`或`_`来进行标记。
+
+格式如下：
+
+```Ruby
+#每行末尾都有两个空格
+*斜体文本*
+_斜体文本_
+**粗体文本**
+__粗体文本__
+***粗斜体文本***
+___粗斜体文本___
+```
+
+示例如下：
+
+*斜体文本*  
+_斜体文本_  
+**粗体文本**  
+__粗体文本__  
+***粗斜体文本***  
+___粗斜体文本___
+
+# 分隔线
+
+Markdown支持使用三个以上的`*`，`-`或者`_`来建立分隔，行内除了空格不能有其他内容，且符号中间可以有空格，下面几种写法均可以建立分隔线。
+
+格式如下：
+
+```Ruby
+***
+* * *
+*****
+- - -
+----------
+```
+
+示例如下：
+
+***
+* * *
+*****
+- - -
+----------
+
+# 删除线
+
+Markdown支持显示删除线，只需要在文字两端加上两个`~`即可。
+
+格式如下：
+
+```Ruby
+#每行末尾都有两个空格
+GOOGLE.COM  
+~~BAIDU.COM~~
+```
+
+示例如下：
+
+GOOGLE.COM  
+~~BAIDU.COM~~
+
+# 下划线
+
+Markdown并不支持下划线，但是可以通过HTML的`<u>`标签实现。
+
+格式如下：
+
+```Ruby
+<u>下划线</u>
+```
+
+示例如下：
+
+<u>下划线</u>
+
+# 脚注
+
+脚注的格式如下。
+
+格式如下：
+
+```Ruby
+欢迎使用Markdown[^1]！
+
+[^1]:Markdown是一种纯文本标记语言。
+```
+
+示例如下：
+
+欢迎使用Markdown[^1]！
+
+[^1]:Markdown是一种纯文本标记语言。
+
+# 列表
+
+Markdown支持有序列表和无序列表。
+
+## 无序列表
+
+无序列表使用`*`，`+`或者`-`作为标记，在标记后添加一个`空格`，随后打入内容即可。
+
+格式如下：
+
+```Ruby
+* 第一项
+* 第二项
+* 第三项
+
++ 第一项
++ 第二项
++ 第三项
+
+
+- 第一项
+- 第二项
+- 第三项
+```
+
+示例如下：
+
+* 第一项
+* 第二项
+* 第三项
+
++ 第一项
++ 第二项
++ 第三项
+
+
+- 第一项
+- 第二项
+- 第三项
+
+## 有序列表
+
+有序列表使用`数字`与`.`来表示。
+
+格式如下：
+
+```Ruby
+1. 第一项
+2. 第二项
+3. 第三项
+```
+
+示例如下：
+
+1. 第一项
+2. 第二项
+3. 第三项
+
+## 列表嵌套
+
+列表嵌套需要在子列表前添加四个`空格`。
+
+格式如下：
+
+```Ruby
+1. 第一项：
+    - 第一项嵌套的第一个元素
+    - 第一项嵌套的第二个元素
+2. 第二项：
+    - 第二项嵌套的第一个元素
+    - 第二项嵌套的第二个元素
+```
+
+示例如下：
+
+1. 第一项：
+    - 第一项嵌套的第一个元素
+    - 第一项嵌套的第二个元素
+2. 第二项：
+    - 第二项嵌套的第一个元素
+    - 第二项嵌套的第二个元素
+
+# 区块
+
+Markdown支持区块使用，在段落开头添加`>`与一个`空格`即可。(注：似乎不需要空格也可以生效。)
+
+格式如下：
+
+```Ruby
+#每行末尾都有两个空格
+> 'It means something.'  
+> 'Or I think it means something.'  
+> —— Orville Yang.
+```
+
+示例如下：
+
+> 'It means something.'  
+> 'Or I think it means something.'  
+> —— Orville Yang
+
+## 区块嵌套
+
+Markdown的区块是可以嵌套的，只需要多打几个`>`就可以了。
+
+格式如下：
+
+```Ruby
+> 外层
+>> 第一层嵌套
+>>> 第二层嵌套
+```
+
+示例如下：
+
+> 外层
+>> 第一层嵌套
+>>> 第二层嵌套
+
+## 区块中嵌套列表
+
+Markdown的区块中可以嵌套列表，如下。
+
+格式如下：
+
+```Ruby
+> 区块
+> 1. 第一项
+> 2. 第二项
+> + 第一项
+> + 第二项
+> + 第三项
+```
+
+示例如下：
+
+> 区块
+> 1. 第一项
+> 2. 第二项
+> + 第一项
+> + 第二项
+> + 第三项
+
+## 列表中嵌套区块
+
+同样，反过来Markdown的列表中也可以嵌套区块。
+
+格式如下：
+
+```Ruby
+#每行末尾都有两个空格
+* 第一项
+> 你看，  
+> 这就是：  
+> 列表中的区块。
+* 第二项
+```
+
+示例如下：
+
+* 第一项
+> 你看，  
+> 这就是：  
+> 列表中的区块。
+* 第二项
+
+# 代码
+
+Markdown支持多种代码的突出显示方法。
+
+## 函数/代码片段
+
+对于函数或代码片段，可以使用`` ` ``将其包裹起来。
+
+格式如下：
+
+```Ruby
+`printf()` 如左所示
+```
+
+示例如下：
+
+`printf()` 如左所示
+
+## 代码区块
+
+对于一段代码，可以使用代码区块，需要所有代码全部缩进4个`空格`或者两个`制表符`。
+
+格式如下：
+
+```javascript
+    $(document).ready(function () {
+      alert('alert');
+    });
+```
+
+示例如下：
+
+    $(document).ready(function () {
+      alert('alert');
+    });
+
+## 另一种代码区块
+
+或者使用```` ``` ````包裹一段代码，并指定一种语言（或者不指定）。
+
+格式如下：
+
+````Ruby
+```javascript
+$(document).ready(function () {
+    alert('alert');
+});
+```
+````
+
+示例如下：
+
+```javascript
+$(document).ready(function () {
+    alert('alert');
+});
+```
+
+## 代码中包含`` ` ``的情况
+
+只需要在代码外再使用多个`` ` ``进行嵌套即可。
+
+格式如下：
+
+```Ruby
+`` ` ``
+```
+
+示例如下：
+
+`` ` ``
+
+或者是：
+
+格式如下：
+
+`````Ruby
+````Ruby
+```javascript
+$(document).ready(function () {
+    alert('alert');
+});
+```
+````
+`````
+
+示例如下：
+
+````Ruby
+```javascript
+$(document).ready(function () {
+    alert('alert');
+});
+```
+````
+
+# 链接
+
+Markdown支持多种使用链接的方法。
+
+## 第一种方法
+
+使用`[]()`格式，例如：
+
+格式如下：
+
+```Ruby
+[Orville Yang's Blog](https://orvilleyang.github.io)
+```
+
+示例如下：
+
+[Orville Yang's Blog](https://orvilleyang.github.io)
+
+## 第二种方法
+
+或者你可以使用`<>`格式。
+
+格式如下：
+
+```Ruby
+<https://orvilleyang.github.io>
+```
+
+示例如下：
+
+<https://orvilleyang.github.io>
+
+## 高级链接
+
+或者你可以通过变量来设置一个地址，并在文章末尾对变量进行赋值。
+
+格式如下：
+
+```Ruby
+这是我的博客：[Orville Yang's Blog][2]
+
+[2]: https://orvilleyang.github.io
+```
+
+示例如下：
+
+这是我的博客：[Orville Yang's Blog][2]
+
+[2]: https://orvilleyang.github.io
+
+# 图片
+
+## 原生支持
+Markdown原生的图片格式为`![]()`，具体为`![属性文本](图片地址 "可选标题")`。
+
+格式如下：
+
+```Ruby
+![这是Menhera Chan表情包。](/img/in-post/2021-12-15-markdown/1.jpg "Menhera Chan：チンチーン！")
+```
+
+示例如下：
+
+![这是Menhera Chan表情包。](/img/in-post/2021-12-15-markdown/1.jpg "Menhera Chan：チンチーン！")
+
+## 使用链接变量
+
+或者也可以像链接那样使用变量。
+
+```Ruby
+![这是Menhera Chan表情包。][3]
+
+[3]: /img/in-post/2021-12-15-markdown/1.jpg
+```
+
+示例如下：
+
+![这是Menhera Chan表情包。][3]
+
+[3]: /img/in-post/2021-12-15-markdown/1.jpg
+
+## 使用HTML的`<img>`标签
+
+但是Markdown并不支持设置图片的高宽，因而我推荐使用HTML的`<img>`标签替代。
+
+格式如下：
+
+```Ruby
+<img src="/img/in-post/2021-12-15-markdown/1.jpg" width="30%">
+```
+
+示例如下：
+
+<img src="/img/in-post/2021-12-15-markdown/1.jpg" width="30%">
+
+**需要注意的是，Width设置既支持绝对值，也支持百分比的相对值，按照网页访问者的浏览器页面宽度计算。**
+
+# 表格
+
+## 普通表格
+
+Markdown使用`|`和`行`来分隔不同的单元格，使用`-`来分隔表头和其他行。
+
+格式如下：
+
+```Ruby
+|  表头1   | 表头2  |
+|  -----  | -----  |
+| 单元格1  | 单元格2 |
+| 单元格3  | 单元格4 |
+```
+
+示例如下：
+
+|  表头1   | 表头2  |
+|  -----  | -----  |
+| 单元格1  | 单元格2 |
+| 单元格3  | 单元格4 |
+
+## 对齐方式
+
+我们可以通过表头和其他行的分隔行来设置本列表格的对齐方式。
+
+格式如下：
+
+```Ruby
+| 左对齐 | 居中对齐 | 右对齐 |
+| :-----| :----: | ----: |
+| 单元格 | 单元格 | 单元格 |
+| 单元格 | 单元格 | 单元格 |
+```
+
+示例如下：
+
+| 左对齐 | 居中对齐 | 右对齐 |
+| :-----| :----: | ----: |
+| 单元格 | 单元格 | 单元格 |
+| 单元格 | 单元格 | 单元格 |
+
+# 支持的HTML元素
+
+Markdown不支持的内容，可以直接使用HTML撰写，包括`<kbd> <b> <i> <em> <sup> <sub> <br>`等。
+
+格式如下：
+
+```Html
+使用<kbd>Ctrl</kbd>+<kbd>W</kbd>关闭本页面。  
+使用<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>重新打开刚刚关闭的页面。
+```
+
+示例如下：
+
+使用<kbd>Ctrl</kbd>+<kbd>W</kbd>关闭本页面。  
+使用<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>重新打开刚刚关闭的页面。
+
+# 转义
+
+Markdown使用了很多特殊符号来定义格式，如果你的文档需要这些字符，可以通过`\`转义它们。支持的符号有：``\ ` * _ {} [] () # + - . !``
+
+格式如下：
+
+```Ruby
+**文本加粗**  
+\*\* 正常显示星号 \*\*
+```
+
+示例如下：
+
+**文本加粗**  
+\*\* 正常显示星号 \*\*
+
+# 公式
+
+在Markdown中实现公式插入有几种方法，这里仅给出一种我认为最优的方法，即加载MathJax引擎实现对公式的渲染。格式为使用`$$`包裹TeX或LaTeX格式的数学公式来实现。注意需要在页面头部插入声明加入MathJax的js。
+
+格式如下：
+
+```Ruby
+#在页面头部插入
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+#公式
+$$
+\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} 
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\
+\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\
+\end{vmatrix}
+${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}
+$$
+```
+
+示例如下：
+
+$$
+\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} 
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\
+\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\
+\end{vmatrix}
+${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}
+$$
+
+# 流程图、顺序图、甘特图
+
+在Mathdown中实现这些图表也有数种方法，在这里仅给出一种我认为最优的方法，即加载Mermaid实现渲染，同样需要在页面头部加入js。在这里仅给出一种示例，其他种可以参考[它的GitHub](https://github.com/mermaid-js/mermaid)。
+
+```Ruby
+#在页面头部插入
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+
+#流程图
+<div class="mermaid">
+     graph LR
+      A --- B
+      B-->C[fa:fa-ban forbidden]
+      B-->D(fa:fa-spinner);
+</div>
+```
+
+示例如下：
+
+<div class="mermaid">
+     graph LR
+      A --- B
+      B-->C[fa:fa-ban forbidden]
+      B-->D(fa:fa-spinner);
+</div>
+
+整理这篇稿子比我想象得花了更多时间。

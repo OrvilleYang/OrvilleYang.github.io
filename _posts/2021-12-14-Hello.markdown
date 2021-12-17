@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Hello World!"
-subtitle:   "如何使用Github Pages搭建个人博客"
+subtitle:   "如何使用GitHub Pages搭建个人博客"
 date:       2021-12-14 14:00:00
 author:     "Orville Yang"
 header-img: "img/post-bg.jpg"
