@@ -380,7 +380,7 @@ Markdown支持多种代码的突出显示方法。
 
 格式如下：
 
-```javascript
+```Ruby
     $(document).ready(function () {
       alert('alert');
     });
@@ -659,6 +659,8 @@ $$
 
 在Mathdown中实现这些图表也有数种方法，在这里仅给出一种我认为最优的方法，即加载Mermaid实现渲染，同样需要在页面头部加入js。在这里仅给出一种示例，其他种可以参考[它的GitHub](https://github.com/mermaid-js/mermaid)。
 
+格式如下：
+
 ```Ruby
 #在页面头部插入
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
@@ -681,5 +683,24 @@ $$
       B-->C[fa:fa-ban forbidden]
       B-->D(fa:fa-spinner);
 </div>
+
+# 对齐
+
+Markdown原生不支持对齐，但是可以通过HTML的标签实现。
+
+格式如下：
+
+```Ruby
+<center>居中</center>
+<p align="left">左对齐</p>
+<p align="right">右对齐</p>
+```
+
+示例如下：
+
+<center>居中</center>
+<p align="left">左对齐</p>
+<p align="right">右对齐</p>
+
 
 整理这篇稿子比我想象得花了更多时间。
