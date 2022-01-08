@@ -1,0 +1,135 @@
+---
+layout:     post
+title:      "Markdown Issues 2"
+subtitle:   "Markdown与HTML的图片排版问题"
+date:       2022-1-8 9:30:00
+author:     "Orville Yang"
+header-style: text
+catalog: true
+tags:
+    - 电脑
+    - 折腾
+    - Markdown
+    - MD
+    - 博客
+    - 笔记
+---
+
+# 问题1：原模板设置的最大宽度过窄
+
+原模版使用的框架为Boootstrap，因此我们需要在/css/bootstrap.min.css中找到对应的项目进行修改。下面使用bootstrap.css进行演示。
+
+```css
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+```
+
+将其中对应项目中的`1200px`与`1170px`更换为更大的数值即可。
+
+```css
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+```
+
+或者如果你不希望变更所有的页面，而只想在这一页面上生效，可以在这一页面Post的Markdown文件最开头插入一段声明，并将其中内容设置为你需要的值。  
+**注意：六个数值需要同步调整，否则在缩放时会出现奇怪的问题。**
+
+```css
+<style>
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+</style>
+```
+
+# 问题2：原模板中插入图片默认居中排列
+
+最初希望使用HTML中`<img>`标签的`align`属性实现，但是这一用法已经不被推荐使用了。并且，其与CSS的`float`属性都会使元素放弃行内元素的特性，带来新的排版问题。  
+因而需要使用CSS的`margin`与'padding'属性来实现。
+
+```css
+margin: 10px 5px 15px 20px;
+```
+
+这一例子意译为：上外边距是10px；右外边距是5px；下外边距是15px；左外边距是20px。`padding`标签同用法。除了具体的`length`值外，也可以使用`auto`来让浏览器自动给出，或者`%`以包含元素宽度的百分比指定外边距；`inheit`规定应该从父元素继承外边距。
+
+最终的解决方案同样如上一个问题，原模版关于图片等元素的排版定义在/css/hux-blog.min.css中，我们需要稍加修改，同样使用hux-blog.css作示例。
+
+```css
+.post-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5em auto 1.6em auto;
+}
+```
+
+修改为如下，即可实现所有页面图片全部左对齐。
+
+```css
+  margin: 1.5em auto 1.6em 0;
+```
+
+当然，你可能也不想一次性把所有页面都设置为图片左对齐的格式，而只希望这一样式仅仅在这一个页面生效。同样，你需要在这一post的markdown文件的开始添加一段声明，并把其中的值修改为你需要的。
+
+```css
+<style>
+.post-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5em auto 1.6em 0;
+}
+</style>
+```
+
+# 问题3：一个字换一个颜色时排版会出现混乱
+
+例如
+```HTML
+<font color="#FF0000">R</font><font color="#00FF00">G</font><font color="#0000FF">B</font> = (<font color="#FF0000">191</font>,<font color="#00FF00">59</font>,<font color="#0000FF">83</font>)
+```
+会被显示为  
+<font color="#FF0000">R</font><font color="#00FF00">G</font><font color="#0000FF">B</font> = (<font color="#FF0000">191</font>,<font color="#00FF00">59</font>,<font color="#0000FF">83</font>)
+
+可以在两端加上`<p>`与`</p>`解决。
+```HTML
+<p><font color="#FF0000">R</font><font color="#00FF00">G</font><font color="#0000FF">B</font> = (<font color="#FF0000">191</font>,<font color="#00FF00">59</font>,<font color="#0000FF">83</font>)</p>
+```
+<p><font color="#FF0000">R</font><font color="#00FF00">G</font><font color="#0000FF">B</font> = (<font color="#FF0000">191</font>,<font color="#00FF00">59</font>,<font color="#0000FF">83</font>)</p>
+
+# 问题4：Atom自带的markdown-preview功能不足
+
+由于文章内容可能过长，自带的markdown-preview插件不支持自动预览页面自动跟随滚动，很不方便。在尝试过markdown-preview-plus+markdown-scroll-sync搭配但是无效之后，我使用markdown-preview-enhanced达成了效果。
+
+# 发现的一个小bug
+
+如果在根目录下新建一个名为`tmp`的文件夹，会导致页面上方导航栏多出一个标签。
