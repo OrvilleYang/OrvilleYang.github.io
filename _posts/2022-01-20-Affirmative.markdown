@@ -5,7 +5,7 @@ subtitle:   "Affirmative"
 date:       2022-01-20 12:30:00
 author:     "Orville Yang"
 header-style: text
-catalog: false
+catalog: true
 tags:
     - 转载
     - 平权

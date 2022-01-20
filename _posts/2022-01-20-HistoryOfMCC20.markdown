@@ -5,7 +5,7 @@ subtitle:   "The history of MCC20 in Shahe"
 date:       2022-01-20 14:00:00
 author:     "Orville Yang"
 header-style: text
-catalog: false
+catalog: true
 tags:
     - 转载
     - 历史
