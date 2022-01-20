@@ -5,7 +5,7 @@ subtitle:   "Anti-Landlord"
 date:       2022-01-20 10:30:00
 author:     "Orville Yang"
 header-style: text
-catalog: true
+catalog: false
 tags:
     - 转载
     - 奋斗

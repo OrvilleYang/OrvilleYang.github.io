@@ -4,7 +4,7 @@ title:      "为什么总有人喜欢为资本家辩护？"
 subtitle:   "Anti-Capitalist"
 date:       2022-01-20 10:40:00
 author:     "Orville Yang"
-header-style: text
+header-style: false
 catalog: true
 tags:
     - 转载
