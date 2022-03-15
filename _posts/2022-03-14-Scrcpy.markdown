@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Wireless monitoring"
-subtitle:   "如何将手机屏幕无线投屏至电脑上"
+title:      "如何将手机屏幕无线投屏至电脑上"
+subtitle:   "Wireless monitoring"
 date:       2022-3-14 19:30:00
 author:     "Orville Yang"
 header-style: text
@@ -112,7 +112,7 @@ scrcpy
 
 即可。Scrcpy会以默认配置（手机分辨率，8M码率）运行。如果使用的是Powershell，则需要在前面加上`.\`再执行。
 
-如果你像我一样通过无线链接的话，此时执行：
+如果你像我一样通过无线连接的话，此时执行：
 
 ```shell
 scrcpy --tcpip=192.168.1.3:5555
