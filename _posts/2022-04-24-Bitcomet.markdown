@@ -1,0 +1,49 @@
+---
+layout:     post
+title:      "扒一扒Bitcomet（比特彗星）背后的运营实体"
+subtitle:   "The background of Bitcomet"
+date:       2022-4-24 13:30:00
+author:     "Orville Yang"
+header-style: text
+catalog: true
+tags:
+    - 电脑
+    - 折腾
+    - BT
+    - PT
+    - 笔记
+---
+
+## 前言
+
+目前市面上使用量最高的几个BT下载工具，主要有[Bitcomet](https://www.bitcomet.com/en)，[Utorrent](https://www.utorrent.com/)，[Qbittorrent](https://www.qbittorrent.org/)等。其他工具及对比可以参考[Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients)。Bitcomet和Utorrent为公司运营的免费软件，Qbittorrent为开源软件。  
+笔者自己在PT站一直使用Utorrent，但是BT则是使用Bitcomet多一些，这是由于其长效种子对老种的支持率太高了，以至于其他下载工具都无法下载的老种也可以通过其慢慢下载下来。  
+但是近几年笔者在使用Bitcomet时也发现，其广告内容十分地本土化，像是专门交给中国公司负责广告内容了一样。此外，在下载和使用其过程中，Windows Defender也数次弹出提示警告说可能存在威胁。网上也有[类似的讨论](https://www.52pojie.cn/thread-1244050-1-1.html)。在发现自己使用的Bitcomet主程序签名如上述讨论，同样为`Wang Xing`后，笔者开始起了疑心，决心扒一扒这个我一直使用的软件的幕后故事。
+
+# 签名问题
+
+如上所述，笔者发现自己电脑中安装的Bitcomet同样为`Wang Xing`签名。于是笔者想当然地认为，这大概率是国内的某个人把Bitcomet程序重新打包，添加广告内容后又放出来了（正如苏州某无良公司所为）。  
+但是笔者是一个比较谨慎的人，平常下载软件大都是从软件官网直接下载的，很少会中招，因此发现问题后笔者直奔[Bitcomet官网](https://www.bitcomet.com/en)重新下载了一份安装程序，一查签名，还是`Wang Xing`。联想到有网友提到Bitcomet官网对大陆IP封锁，笔者更换网页为英文并更换IP尝试，下载下来的安装包仍然如此。在从各类软件园、下载站下载安装包，发现签名仍然均如此后，笔者开始发觉有什么不对劲了。排除其他可能性后，很显然`Wang Xing`就是Bitcomet目前的开发者。  
+一般而言，Bitcomet这种体量的软件，其维护不太可能由一个人完成，其背后大概率有一个团队，或者一个商业公司。但是神奇的是，不像其他软件公司，Bitcomet官网上没有透露任何公司、团队的信息，所有协议内容都由Group、Team一类的模糊用词代替了，也没有任何一家软件公司声称其拥有这一软件。而其应用的签名又使用了`Wang Xing`的个人签名，而非公司或团体。这就使得这一公司更加神秘了起来。那么究竟是哪一家神秘公司开发了这一受欢迎的下载工具呢？这个Wang Xing又是何许人也？
+
+# 运营公司
+
+在一切未知的情况下，笔者决定从手中现有的信息开始调查。首先是Bitcomet的官网和论坛，通过Whois工具查询，果不其然均被隐藏了。查看文件签名信息，邮箱也是公用邮箱服务。至此，善用搜索引擎便成为了必要。  
+直接搜索引擎查询也是找不到任何有效的信息。在这时，笔者注意到了其官网提供的安卓版本程序，安卓应用程序上架Play Store是需要提供开发者信息的，真可谓柳暗花明又一村。打开Play Store，不出所料，其应用下方的提供者硕然写着`Comet Network`，那么这个Comet Network又是什么公司？  
+使用搜索引擎同时查找两个关键词 "wang xing" + "comet network"，立刻就找到了一条领英的个人信息，显示Wang Xing目前在Shanghai comet network technology co. ltd任Software Manager一职。此时，我们已经可以回答上面的两个问题了。Shanghai comet network technology co. ltd这一公司目前拥有Bitcomet的版权，而Wang Xing则任职于这一公司，大概率负责Bitcomet的业务。那么这个公司到底叫什么呢？
+
+# 国内信息
+
+非普通音译的中国公司的英文名确实很难对照回中文名，在这一步上笔者耗费的时间也是最多的。中文互联网上的企业信息查询工具无法顺畅地查询企业的英文名称，搜索引擎直接搜索也给不出直接的有效信息。但是这时，搜索结果中的一条APP Store的结果引起了笔者的注意。原来，挂名在Shanghai comet network technology co. ltd这一开发者下的软件并非只有Bitcomet一个，这一公司同时也开发了众多软件。同样，Play Store也有上架相同的APP。如果面对中国大陆用户提供服务的话，其应用隐私政策应当会写明公司的主体名称。在下载其中一个应用，打开其应用协议后，笔者惊喜地发现了其开发公司的名称：上海柯数网络科技有限公司。  
+在股东信息中，也发现了我们的老朋友：王兴，即Wang Xing。但是这一公司体量较小，应当并不是其从事Bitcomet的运营工作。于是，在王兴参股的公司中，找到了：上海柯慧网络科技有限公司，这一公司，这应当对应的就是Shanghai comet network technology co. ltd了。至此，笔者所有的疑惑都已经解开了。
+
+# 并非刻意隐藏？
+
+更加有趣的是，在上海柯慧网络科技有限公司的注册信息中，邮箱一栏赫然是bitcomet.com的域名。其拥有的软件著作信息中也写明了BitComet文件共享软件。Bitcomet官网的Paypal捐赠，收款人也正是这一公司的另一股东：冉宁煜。看起来似乎并非刻意隐藏，而是企业信息不流通，难以查询。  
+但是也有几点难以解释：1、为何使用个人签名而非公司签名；2、这一BT工具非常受欢迎，对公司而言应当是巨大的声誉，为何没有进行宣传？  
+在正文的最后，提一件更有趣的事情。Bitcomet和Bittorrent的部分商标掌握在千兆科技(深圳)有限公司手中，而其为迅雷的全资子公司。
+
+## 后言
+
+笔者在尝试Qbittorrent时遇到了一些卡顿、老种下载难的问题，[例1](https://www.bilibili.com/read/cv14454049)，[例2](https://www.bilibili.com/read/cv15545747)。因此现在换回了Bitcomet的[免安装版](https://bbs.itzmx.com/forum.php?mod=viewthread&tid=100312)。
+
